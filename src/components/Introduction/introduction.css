@@ -1,0 +1,118 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:700'); */
+
+.introduction-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns both sections at the top */
+    width: 100%;
+    margin-top: 10vh; /* Adds some space at the top */
+    gap: 3rem; /* Adds space between the name and about sections */
+}
+
+.name-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-content-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px; /* Limits the width of the about section */
+}
+@keyframes showTopText {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(0, 50%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes showBottomText {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animated-title {
+    position: absolute;
+    color: white;
+    font-family: Roboto, Arial, sans-serif;
+    height: 90vmin;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vmin;
+}
+
+
+.animated-title>div {
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.animated-title>div div {
+    font-size: 9vmin;
+    padding: 2vmin 0;
+    position: absolute;
+}
+
+.animated-title>div div span {
+    display: block;
+}
+
+.animated-title>div.text-top {
+    border-bottom: 1vmin solid #b3b0b0;
+    top: 0;
+}
+
+.animated-title>div.text-top div {
+    animation: showTopText 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 100%);
+}
+
+.animated-title>div.text-top div span:first-child {
+    display: flex;
+    justify-content: flex-start;
+    color: #b3b0b0;
+}
+
+.animated-title>div.text-bottom {
+    bottom: 0;
+}
+
+.animated-title>div.text-bottom div {
+    animation: showBottomText 0.5s;
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -100%);
+}
+
+.about-container {
+    margin-top: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    font-style: italic;
+}
